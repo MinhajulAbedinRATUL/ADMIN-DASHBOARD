@@ -6,7 +6,7 @@
 
 #container {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template: 185px 1fr / 300px 1fr;
 }
 
 .notification-profile img:nth-child(2) {
@@ -26,7 +26,7 @@
     display: grid;
     row-gap: 20px;
     grid-template: 2fr 3fr / 4fr 2fr;
-    border: solid 1px black;
+    box-shadow: 0px 1px 5px;
     padding: 20px 50px;
 }
 
@@ -88,4 +88,36 @@ input[type="search"] {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+#dashboard {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #1992d4;
+}
+
+#dashboard div:nth-child(n+2) img {
+    width: 30px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
+
+.dashboard {
+    width: 60px;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.community,
+.privacy {
+    margin-bottom: 70px;
 }
