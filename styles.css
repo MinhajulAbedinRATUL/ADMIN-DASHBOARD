@@ -4,6 +4,38 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('Inconsolata-Regular.woff2') format('woff2'),
+        url('Inconsolata-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Italic.woff2') format('woff2'),
+        url('Roboto-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.woff2') format('woff2'),
+        url('Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font: "Inconsolata";
+    font-style: normal;
+}
+
 #container {
     display: grid;
     grid-template: 185px 1fr / 300px 1fr;
@@ -26,8 +58,9 @@
     display: grid;
     row-gap: 20px;
     grid-template: 2fr 3fr / 4fr 2fr;
-    box-shadow: 0px 1px 5px;
+    box-shadow: 0px 0.01px 5px;
     padding: 20px 50px;
+    font-weight: 900;
 }
 
 .search,
@@ -44,11 +77,11 @@
 }
 
 input[type="search"] {
-    width: 600px;
-    height: 25px;
+    width: 650px;
+    height: 35px;
     background-color: #e2e8f0;
     border-style: none;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .notification-profile {
@@ -56,6 +89,7 @@ input[type="search"] {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    font-size: 20px;
 }
 
 .dp {
@@ -63,6 +97,7 @@ input[type="search"] {
     justify-content: start;
     align-items: center;
     gap: 20px;
+    font-size: 20px;
 }
 
 .new-upload-share {
@@ -70,6 +105,7 @@ input[type="search"] {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    font-size: 20px;
 }
 
 .new,
@@ -84,18 +120,13 @@ input[type="search"] {
     align-items: center;
 }
 
-.dp div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 #dashboard {
     grid-area: 1 / 1 / 3 / 2;
     display: flex;
     flex-direction: column;
     gap: 40px;
     background-color: #1992d4;
+    font-weight: 900;
 }
 
 #dashboard div:nth-child(n+2) img {
@@ -108,16 +139,149 @@ input[type="search"] {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
+    font-size: 25px;
 }
 
 .dashboard {
     width: 60px;
-    font-size: 30px;
-    margin: 20px;
+    font-size: 35px;
+    margin: 25px;
 }
 
 .community,
 .privacy {
     margin-bottom: 70px;
+}
+
+.projects,
+.announcements,
+.trending {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    font-size: 25px;
+    font-weight: 900;
+    top: -40px;
+    left: 0;
+}
+
+#article {
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 4fr 2fr;
+    padding: 80px 50px 50px 50px;
+}
+
+.projects {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 225px;
+    padding: 30px 20px;
+    border-left: solid 8px #f0b429;
+}
+
+.icon {
+    display: flex;
+    gap: 30px;
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.card img {
+    height: 25px;
+    width: auto;
+}
+
+.announcements {
+    grid-row: 2;
+}
+
+.card,
+.announcements,
+.trending {
+    box-shadow: 0px 1px 2px;
+    border-radius: 10px;
+}
+
+#announcements-trending {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 40px 10px 30px;
+}
+
+.announcements,
+.trending {
+    width: 300px;
+}
+
+.announcements div {
+    padding-bottom: 20px;
+}
+
+.announcements div:nth-child(-n+3) {
+    border-bottom: solid 1px rgb(207, 200, 200);
+}
+
+.trending div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.trending img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.scratch {
+    background-color: skyblue;
+}
+
+.loonix {
+    background-color: gray;
+}
+
+.golang {
+    background-color: yellow;
+}
+
+.ferris {
+    background-color: rgb(186, 15, 201);
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 30px 15px 20px;
+}
+
+.card p,
+.announcements div p,
+.second-line {
+    color: rgb(72, 71, 71);
+    font: 'Roboto';
 }
